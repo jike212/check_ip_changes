@@ -11,6 +11,7 @@ cd ~
 git clone https://github.com/HaraldoFilho/check_ip_changes.git
 cd check_ip_changes
 mv _config.sh config.sh
+
 ```
 
 ## Configuration
