@@ -20,7 +20,7 @@ current_ip=$(curl ipinfo.io/ip);
 # if public ip has changed send e-mail informing
 if [[ "$current_ip" != "$last_ip" ]];
     then
-        echo "The new Public IP is $current_ip" | mail -s "Your Public IP address has changed!" -a From:"$HOSTNAME"\<$EMAIL_FROM\> $EMAIL_TO;
+        echo -e "Subject: New IP Change: ${current_ip}\nNew IP is ${current_ip}" | msmtp testuser@test.com
         # save current ip to file
         echo $current_ip > $RUN_DIR/$LAST_IP_FILE;
 fi
